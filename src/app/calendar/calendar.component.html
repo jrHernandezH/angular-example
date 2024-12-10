@@ -1,0 +1,13 @@
+<div class="calendar">
+    <div *ngFor="let month of months" class="month">
+        <h3>{{ month.name }}</h3>
+        <div class="days">
+            <div class="day-name" *ngFor="let dayName of ['L', 'M', 'M', 'J', 'V', 'S', 'D']">
+                {{ dayName }}
+            </div>
+            <div *ngFor="let day of month.days" class="day" [ngClass]="getDayClasses(day)">
+                <span *ngIf="day">{{ day.day }}</span>
+            </div>
+        </div>
+    </div>
+</div>
